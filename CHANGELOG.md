@@ -1,0 +1,393 @@
+## 4.1.0
+
+* Improve:
+  1. add [ExtendedImage.network.cacheMaxAge] to set max age to be cached.
+
+## 4.0.1
+
+* Issues:
+  1. fix issue that we should end method with a call to super.dispose().(#329).
+
+## 4.0.0
+
+* Breaking change:
+
+  1. we cache raw image pixels as default behavior at previous versions, it's not good for heap memory usage. so add [ExtendedImageProvider.cacheRawData] to support whether should cache the raw image pixels. It's [false] now.
+
+* Improve:
+
+  1. add [ExtendedResizeImage] to support resize image more convenient.
+  2. add [ExtendedImageProvider.imageCacheName] to support custom ImageCache to store ExtendedImageProvider.
+  3. add MemoryUsageDemo. #315
+
+* Issues:
+  1. fix issue that [EditorConfig.editActionDetailsIsChanged] is not fire when change crop area. #317
+
+## 3.0.0
+
+* Improve:
+
+  1. support null-safety
+  2. add [ExtendedNetworkImageProvider.printError]
+  3. merge code from Flutter 2.0
+
+* Breaking change:
+
+  1. remove [TransparentMaterialPageRoute] and [TransparentMaterialPageRoute]
+
+## 2.0.0
+
+* Improve:
+  1. add cacheKey for NetworkProvider. #288
+  2. web capability at pub.dev.
+  3. add change event for editor. #300
+
+* Breaking change:
+  1. Use [EditorCropLayerPainter] instead of [ExtendedImageCropLayerCornerPainter]
+
+## 1.6.0
+
+* Improve:
+
+  1. public ExtendedImageSlidePageHandler for slide other widget. #298
+
+## 1.5.0
+
+* Improve:
+
+  1. public handleLoadingProgress for default constructor of ExtendedImage. #274
+
+## 1.4.0
+
+* Improve:
+
+  1. add hitTestBehavior for GestureConfig and EditorConfig. #271
+
+## 1.3.0
+
+* Features:
+  1. support zoom with mouse wheel.
+
+## 1.2.0
+
+* Features:
+  1. add posibility to draw custom crop layout corners
+  2. add corner shape(ExtendedImageCropLayerPainterCircleCorner())
+
+## 1.1.2
+
+* Issues:
+  1. fix issue that flickering when zooming out(#235).
+
+## 1.1.1
+
+* Issues:
+  1. fix issue that slide offset is not right.
+
+## 1.1.0
+
+* Features:
+  1. add cacheHeight and cacheWidth params for all constructors.
+  2. add isAntiAlias parameter.
+  3. add GestureDetailsIsChanged call back for GestureConfig(#214).
+
+* Improve:
+  1. more demo.
+
+## 1.0.0
+
+* Improve:
+
+  1. merge from Defer image decoding when scrolling fast(https://github.com/flutter/flutter/pull/49389).
+
+  2. flutter sdk minimum version limit to 1.17.0.
+
+
+## 0.9.0
+
+* Features:
+  1. add cacheHeight and cacheWidth params for ExtendedImage.network.
+  2. add Key extendedImageGestureKey for ExtendedImageGesture.
+
+## 0.8.0
+
+* Features:
+  1. add call back CanScrollPage for ExtendedImageGesturePageView.
+
+## 0.7.4
+
+* Issues:
+  1. fix ScrollPhysics is not working for ExtendedImageGesturePageView
+
+## 0.7.3+1
+
+* Improve:
+  1. remove docs from master branch and release web at github_page branch.
+
+## 0.7.3
+
+* Improve:
+  1. fix build error on high flutter sdk(> 1.6.0)
+  2. fix analysiz_options
+
+## 0.7.2
+
+* Features:
+  1. support loading progress for network
+  2. public HttpClient of ExtendedNetworkImageProvider
+  3. public ExtendedImageGestureState for SlideOffsetHandler/SlideEndHandler/            SlideScaleHandler to get scale of image
+
+## 0.7.1
+
+* Improve:
+  1. scale parameter of method(handleDoubleTap) is support animationMinScale and animationMaxScale now.
+
+## 0.7.0
+
+* Features:
+  1. support web.
+  2. add [clearMemoryCacheWhenDispose] parameter that whether clear memory cache when image is disposed.
+
+* Issues:
+  1. fix animationMinScale and animationMaxScale are not working for gif.
+  2. fix scale parameter of method(handleDoubleTap) is beyond minScale and maxScale.
+
+## 0.6.9
+
+* Features:
+  1. support customize offset when slide page.
+
+## 0.6.8
+
+* Issues:
+  1. fix breaking change for flutter 1.10.15 about miss load parameter.
+
+## 0.6.7
+
+* Issues:
+  1. fix issue that ExtendedImageGesturePageView didn't work well when set initial alignment.
+
+## 0.6.6
+
+* Features:
+  1. support init image with alignment when initialScale >1.0.
+* Issues:
+  1. fix issue that scrollDirection didn't work when set it dynamically(ExtendedImageGesturePageView ).
+* Improve:
+  1. add WaterfallFlow demo.
+
+## 0.6.5
+
+* Features:
+  1. add completedWidget for ExtendedImageState, it is include gesture or editor, so that you would't miss them
+* Improve:
+  2. improve documents about Load State
+
+## 0.6.4
+
+* Issues:
+  1. fix issue that rawImageData can't be cached for ExtendedExactAssetImageProvider/ExtendedAssetImageProvider.
+* Improve:
+  1. add demo about ImageEditor with native library, it's faster.
+
+## 0.6.3
+
+* Issues:
+  1. fix issue that forget canvas.restore after canvas.clipRect
+* Breaking Change:
+  2. ImageEditor：you should crop image data before flip or rotate image data now.
+* Improve:
+  3. increase cropping speed
+
+## 0.6.2
+
+* Features:
+  1. add InitCropRectType(imageRect,layoutRect) for EditorConfig to define init crop rect base on initial image rect or image layout rect.
+* Breaking Change:
+  1. make sure the image is all painted to crop,the fit of image must be BoxFit.contain.
+
+## 0.6.1
+
+* Issues:
+  1. fix issue about drag slowly in ImageEditor
+
+## 0.6.0
+
+* Issues:
+  1. fix issue about strange behaviour at slide out page
+
+## 0.5.9
+
+* Issues:
+  1. add HeroBuilderForSlidingPage call back to fix strange hero animation
+
+## 0.5.8
+
+* Features:
+  1. support to crop,rotate,flip image
+
+## 0.5.6
+
+* Improve:
+  1. add key for ExtendedImageSlidePage
+
+## 0.5.5
+
+* Features:
+  1. add call back CanMovePage for ExtendedImageGesturePageView. related issue. #32
+
+## 0.5.4
+
+* Issues:
+  1. fix issue about borderRadius and border
+  2. fix demo error about extended_text
+
+## 0.5.3
+
+* Improve:
+  1. merge codes base on v1.7.8
+
+## 0.5.1
+
+* Features:
+  1. add call back onSlidingPage when is sliding page, you can change other widgets state in page.ExtendedImageSlidePage
+  2. add enableSlideOutPage parameter to define whether enable slide out page. ExtendedImage
+
+## 0.4.3
+
+* Breaking Change:
+  1. parameter gestureConfig is obsolete. initGestureConfigHandler is used to setting GestureConfig now.
+
+* Issues:
+  1. fix issue about slide page.
+
+* Features:
+  1. support to slide page at loading/failed state
+
+## 0.4.2
+
+* Improve:
+  1. add README-ZH.md
+
+## 0.4.1
+
+* Improve:
+  1. add SlideType to support slide only image or whole pageExtendedImageSlidePage
+
+## 0.4.0
+
+* Features:
+  1. support to slide out page
+
+## 0.3.8
+
+* Improve:
+  1. update path_provider 1.1.0
+
+## 0.3.6
+
+* Improve:
+  1. handle load failed when re-addListener
+
+## 0.3.4
+
+* Features:
+  1. add physics parameter for ExtendedImageGesturePageView
+
+## 0.3.3
+
+* Improve:
+  1. disabled informationCollector to keep backwards compatibility for now (ExtendedNetworkImageProvider)
+
+## 0.3.2
+
+* Improve:
+  1. import extended_image_library for network cache
+
+## 0.3.1
+* Issues:
+  1. fix issue that AnimationController.stop() called after AnimationController.dispose().
+* Improve:
+  1. show how to build a double tap scale animation.
+
+## 0.2.9
+
+* Improve:
+  1. add handleDoubleTap method to support zoom image base on double tap position.
+
+## 0.2.8
+
+* Improve:
+  1. add inertia scroll when image is zoom in and it's moving page.
+
+## 0.2.7
+
+* Issues:
+  1. fix issue that wrong behavior of page view scroll when image has big width or big height.
+
+## 0.2.6
+
+* Issues:
+  1. fix issue that wrong behavior of page view scroll when image is zoom in.
+
+## 0.2.5
+
+* Improve:
+  1. add onDoubleTap parameter to custom double tap behavior under ExtendedImageMode.Gesture
+
+## 0.2.3
+
+* Features:
+  1. add enableMemoryCache parameter, whether cache in PaintingBinding.instance.imageCache
+  2. add clearMemoryCacheIfFailed parameter, when failed to load image, whether clear memory cache,if true, image will reload in next time.
+* Breaking Change:
+  1. auto cancel network request is obsolete.
+
+## 0.2.2
+
+* Improve:
+  1. update path_provider version from 0.4.1 to 0.5.0+1
+
+## 0.2.1
+
+* Features:
+  1. add cancelToken,retries,timeLimit and timeRetry parameters for ExtendedImage.network method
+  2. add default cancelToken for ExtendedImage.network method
+* Issues:
+  1. fix issue about cancel network image request
+  2. fix gesture page view scrolls not smooth
+
+## 0.2.0
+
+* Features:
+  1. support zoom/pan image and view image in page view like wechat(support zoom in and scroll next or previous image)
+
+## 0.1.8
+
+* Breaking Change:
+  1. remove image_picker_saver from extended_image.
+  obsolete saveNetworkImageToPhoto method(if you want to save photo,you can import image_picker_saver and get data from getNetworkImageData method)
+
+## 0.1.7
+
+* Improve:
+  1. public instantiateImageCodec method so that you can handle image data by override this in ExtendedNetworkImageProvider
+
+## 0.1.6
+
+* Improve:
+  1. add getNetworkImageData method
+
+## 0.1.5
+
+* Improve:
+  1. change toMd5 to keyToMd5
+
+## 0.1.4
+
+* Improve:
+  1. public imageProvider for ExtendedImageState
+
+## 0.1.3
+* First Release:
+  1. Release ExtendedImage.
